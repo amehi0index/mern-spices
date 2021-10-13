@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect, useRef } from 'react'
 import HerbContext from '../../context/herb/herbContext'
 import { Link } from 'react-router-dom'
+import ReactTooltip from 'react-tooltip'
 
 const HerbCardCategories = ({ categories, showFoodInfo, setShowFoodInfo, herbName, setShowCard }) => {
 
@@ -11,6 +12,8 @@ const HerbCardCategories = ({ categories, showFoodInfo, setShowFoodInfo, herbNam
     const [foodContent, setFoodContent] = useState('')
     const [categoriesArr, setCategoriesArr] = useState([])
     const [activeIndex, setActiveIndex] = useState(0)
+
+    const [isActive, setIsActive] = useState(false)
 
     const iconsRef = useRef(null)
 
@@ -43,6 +46,8 @@ const HerbCardCategories = ({ categories, showFoodInfo, setShowFoodInfo, herbNam
         if(foodTitle === e.target.id){
             setShowFoodInfo(!showFoodInfo)
         }
+
+      
         //console.log(query)
         getRecipesQuery(query)
     }
@@ -56,12 +61,19 @@ const HerbCardCategories = ({ categories, showFoodInfo, setShowFoodInfo, herbNam
         }
     }
 
+    /*const toolTipEvent = () => {
+        if(showFoodInfo && activeIndex  === index ){
+            return 'click'
+        }else{
+            return
+            ''
+        }
+    }*/
    /* const recipesOnClick = () => {
         setShowCard(false)
         history.push('/recipes/')
     }*/
 
-    
    function formatCategory(category){
 
         if( category != null && category.length > 1 ){
@@ -88,11 +100,25 @@ const HerbCardCategories = ({ categories, showFoodInfo, setShowFoodInfo, herbNam
             <div className={!showFoodInfo ? 'food-categories'  : 'food-categories switch-bg'}> 
                 <div className="food-icons">
                  {categoriesArr.map((cat, index) => (
-                      <div ref={iconsRef} key={index} className={getIconClassName(index)} id={cat.id}  onClick={(e)=>onClick(e, cat, index)}>{cat.category}</div>
+                     <>
+                        <div 
+                            ref={iconsRef} 
+                            key={index} 
+                            className={getIconClassName(index, cat.isActive)} 
+                            id={cat.id}  
+                            onClick={(e)=> onClick(e, cat, index)}
+                        >{cat.category}</div>
+                   
+                      </>
                  ))}
                 </div>
 
-                <div className={showFoodInfo ? 'food-info show' : 'food-info'}>
+                <div 
+                    className={showFoodInfo ? 'food-info show' : 'food-info'}
+                    data-tip="Click Highlighted Tab to Close" 
+                    data-for="active-icon-tooltip"
+                    data-offset=""
+                >
                     <h3 className='title'>{foodTitle}</h3> 
                     <p className='description'>{foodContent}</p>
                      
@@ -100,6 +126,7 @@ const HerbCardCategories = ({ categories, showFoodInfo, setShowFoodInfo, herbNam
                         Recipes
                     </Link>
                 </div> 
+                <ReactTooltip id="active-icon-tooltip"  effect="solid" />
             </div>
         </>
     )

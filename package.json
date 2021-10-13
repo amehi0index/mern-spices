@@ -16,7 +16,8 @@
     "config": "^3.3.6",
     "express": "^4.17.1",
     "mongoose": "^6.0.10",
-    "multer": "^1.4.3"
+    "multer": "^1.4.3",
+    "react-lottie": "^1.2.3"
   },
   "devDependencies": {
     "concurrently": "^6.3.0",

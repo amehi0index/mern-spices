@@ -31,7 +31,7 @@ const HerbState = (props) => {
 
     const [state, dispatch] = useReducer(herbReducer, initialState)
    
-    //Get herbs
+    //GET herbs
     const getHerbs = async () => {
 
         try {
@@ -51,7 +51,7 @@ const HerbState = (props) => {
 
     const addHerb =  async (herb) => {
 
-        const config = {      //use when sending data
+        const config = {      
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -62,7 +62,7 @@ const HerbState = (props) => {
 
             dispatch({
                 type: ADD_HERB,
-                payload: res.data //response from server is new added herb
+                payload: res.data 
             })
         } catch (err) {
             dispatch({
@@ -73,7 +73,7 @@ const HerbState = (props) => {
            
     }
 
-    //Delete herb
+    //DELETE herb
     const deleteHerb =  async (id) => {
         try {
            await axios.delete(`/api/herbs/${id}`)
@@ -91,10 +91,10 @@ const HerbState = (props) => {
     }
 
     
-    //Update herb
+    //UPDATE herb
     const updateHerb = async (herb) => {
        
-        const config = {      //use when sending data
+        const config = {      
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -105,7 +105,7 @@ const HerbState = (props) => {
 
             dispatch({
                 type: UPDATE_HERB,
-                payload: res.data //response from server is updated herb
+                payload: res.data 
             })
         } catch (err) {
             dispatch({

@@ -7,18 +7,18 @@ import HerbContext from '../../context/herb/herbContext'
 const HerbCard = ({ showCard, setShowCard }) => {
 
     const herbContext = useContext(HerbContext)
-    const { getHerbs, herb } = herbContext
+    const { herb, loading } = herbContext
 
     const cardRef= useRef(null);
     const[showFoodInfo, setShowFoodInfo] = useState(false)
 
     useEffect(() => {
-        getHerbs()
-
-        if (herb !== null ) {
+   
+        if (herb !== null && !loading) {
             setShowCard(true)
         }
-    }, [herb, getHerbs, setShowCard])
+       
+    }, [herb, setShowCard, loading])
  
     useClickAway(cardRef, () => {
         setShowCard(false)
@@ -36,7 +36,7 @@ const HerbCard = ({ showCard, setShowCard }) => {
 
                         <div className="card-content">
                             <div className="info">
-                                <div className="herb-img-container">
+                                <div className={showFoodInfo ? 'herb-img-container hide' : 'herb-img-container'}>
                                     <img src={herb.img} alt="herb"/>
                                     <div className ="overlay"></div>
                                 </div>
@@ -78,7 +78,13 @@ const HerbCard = ({ showCard, setShowCard }) => {
                                 </div>
                             </div>
 
-                            <HerbCardCategories categories={herb.categories}  herbName={herb.name} showFoodInfo={showFoodInfo} setShowFoodInfo={setShowFoodInfo} setShowCard={setShowCard} />
+                            <HerbCardCategories 
+                                categories={herb.categories}  
+                                herbName={herb.name} 
+                                showFoodInfo={showFoodInfo} 
+                                setShowFoodInfo={setShowFoodInfo} 
+                                setShowCard={setShowCard} 
+                            />
                             
                         </div>
                     </div>

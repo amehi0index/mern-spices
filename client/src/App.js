@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Home from './components/user/Home';
+import Home from './components/pages/Home';
 import HerbState from './context/herb/herbState';
 import Recipes from './components/user/Recipes';
 import Search from './components/user/Search';
@@ -18,7 +18,6 @@ const App = () => {
   return (
     <Router>
       <>
-     
         <HerbState>
         <Route exact path="/">
             <Home showCard={showCard} setShowCard ={setShowCard} isSearch={isSearch} setIsSearch={setIsSearch} />

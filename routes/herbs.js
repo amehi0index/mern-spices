@@ -90,7 +90,6 @@ router.post('/upload', upload.single('img'), (req, res) => {
     res.send(`/${req.file.path}`)
 })
 
-
 //UPDATE an Entry
 router.put('/:id', async (req, res) => {
 

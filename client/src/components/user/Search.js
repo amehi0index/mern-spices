@@ -22,7 +22,6 @@ const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, 
         /*if(filtered === null){
             setText('')
         }   */
-        console.log(text)
     },[text, filtered])
 
     const onChange = (e) => {
