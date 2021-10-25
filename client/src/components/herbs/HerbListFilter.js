@@ -1,5 +1,6 @@
 import React, { useContext, useRef, useEffect } from 'react'
 import HerbContext from '../../context/herb/herbContext'
+import { Link } from 'react-router-dom'
 
 
 const HerbListFilter = () => {
@@ -25,6 +26,9 @@ const HerbListFilter = () => {
 
     return (
         <div className="herb-list-filter">   
+             <Link to='/herb-form' className="herb-list-back-btn"  >
+              <i class="fas fa-chevron-left"></i>
+            </Link>
             <input ref={text} type="text" placeholder="Search For Herb By Name"  className="herb-list-input" onChange={onChange} />
             <i className="fas fa-search herb-list-icon"></i>
         </div>   

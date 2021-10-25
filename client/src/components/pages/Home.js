@@ -8,7 +8,7 @@ import { useMediaQuery } from 'react-responsive'
 import HerbCardMobile from '../user/HerbCardMobile'
 import '../../App.css'
 
-const Home = ({ showCard, setShowCard, setIsSearch, isSearch }) => {
+const Home = ({ showCard, setShowCard, setIsSearch, isSearch, loading }) => {
 
     const isMobile = useMediaQuery({
         query: '(max-width: 768px)'
