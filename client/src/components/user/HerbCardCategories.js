@@ -2,8 +2,14 @@ import React, { useState, useContext, useEffect, useRef } from 'react'
 import HerbContext from '../../context/herb/herbContext'
 import { Link } from 'react-router-dom'
 import ReactTooltip from 'react-tooltip'
-
+import HerbCardMobile from '../user/HerbCardMobile'
+import { useMediaQuery } from 'react-responsive'
 const HerbCardCategories = ({ categories, showFoodInfo, setShowFoodInfo, herbName, setShowCard }) => {
+
+    const isMobile = useMediaQuery({
+        query: '(max-width: 768px)'
+    })
+
 
     const herbContext = useContext(HerbContext)
     const { getRecipesQuery } = herbContext
@@ -107,12 +113,10 @@ const HerbCardCategories = ({ categories, showFoodInfo, setShowFoodInfo, herbNam
                             className={getIconClassName(index, cat.isActive)} 
                             id={cat.id}  
                             onClick={(e)=> onClick(e, cat, index)}
-                        >{cat.category}</div>
-                   
+                        >{!isMobile && cat.category}</div>
                       </>
                  ))}
                 </div>
-
                 <div 
                     className={showFoodInfo ? 'food-info show' : 'food-info'}
                     data-tip="Click Highlighted Tab to Close" 

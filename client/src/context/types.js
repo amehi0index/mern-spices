@@ -14,3 +14,6 @@ export const CLEAR_CURRENT = 'CLEAR_CURRENT';
 export const FILTER_HERBS = 'FILTER_HERBS';
 export const CLEAR_HERBS = 'CLEAR_HERBS';
 export const CLEAR_FILTER = 'CLEAR_FILTER';
+
+export const SET_ALERT ='SET_ALERT ';
+export const REMOVE_ALERT ='REMOVE_ALERT';

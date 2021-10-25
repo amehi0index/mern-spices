@@ -128,11 +128,11 @@ const HerbForm = () => {
                     <h1 className ="herb-form-title">{current ? 'Edit ' : 'Add '} Herb or Spice</h1>
                     <div className="form-group">
                         <label htmlFor="name">Name</label>
-                        <input type="text" name="name" value={name} onChange={onChange}  autoComplete="off" />
+                        <input type="text" name="name" value={name} onChange={onChange}  autoComplete="off" required/>
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="other">Other Names</label>
+                        <label htmlFor="other">Aliases</label>
                         <input type="text" name="other" value={other} onChange={onChange}  autoComplete="off"/>
                     </div>
 
@@ -168,8 +168,8 @@ const HerbForm = () => {
                         />
                     </div>
 
-                    <div className="form-group">
-                        <label htmlFor="food-categories">Food Categories</label>
+                    <div className="form-group categories-title">
+                        <h4 htmlFor="food-categories">Food Categories</h4>
                     </div>
 
             
@@ -226,7 +226,7 @@ const HerbForm = () => {
                     </div>
 
                     <div>
-                        <input type="submit" value={current ? 'Update Herb' : 'Add Herb'} className ="herb-form-btn" autoComplete="off"/>
+                        <input type="submit" value={current ? 'Update Herb' : 'Add Herb'} className ="herb-form-btn" autoComplete="off" />
                     </div>
                 </form>
 

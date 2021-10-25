@@ -1,12 +1,20 @@
+
 import { useState, useRef, useEffect, useContext } from 'react'
 import HerbContext from '../../context/herb/herbContext'
+import AlertContext from '../../context/alert/alertContext';
 import { useClickAway } from 'react-use';
 import SearchResults from './SearchResults'
+import Alert from '../layout/Alert';
+
 
 const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, showResults }) => {
 
     const herbContext = useContext(HerbContext)
     const { filtered, filterHerbs, getHerbName, clearFilter } = herbContext
+
+    const alertContext = useContext(AlertContext)
+    const { setAlert } = alertContext
+
 
     const textref = useRef(null)
     const input = useRef(null)
@@ -62,12 +70,16 @@ const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, 
 
     const onSubmit = e => {
         e.preventDefault()  
-        getHerbName(text)
-        setText('')
-        clearFilter()
-        input.current.blur()
-    }
 
+        if (text===''){
+            setAlert('Please Enter an Herb or Spice', 'light');
+        } else{
+            getHerbName(text)
+            setText('');
+            clearFilter()
+            input.current.blur()
+        }
+    }
     const onFocus = ()=>{
        setShowCard(false)
        setSelected(0)
@@ -86,8 +98,7 @@ const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, 
     return (
         <div>
             <div className={ isSearch ? 'search' : 'search hidden'}>
-                <div className="show-input">
-                            
+                <div className="show-input">     
                     <div className="input-results">
                         <div className={ isSearch ?'input-span show' : 'input-span'}>
                             <button className={ isSearch ? 'home-btn hide' : 'home-btn'} onClick={onClick}>
@@ -95,6 +106,10 @@ const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, 
                                     <i className="fas fa-chevron-left"></i>
                                 </span>
                                 <span ref={textref} className="search-text-span">{homeBtnVal}</span>
+                            </button>
+
+                            <button className={ isSearch ? 'home-btn-mobile hide' : 'home-btn-mobile'} onClick={onClick}>
+                                    <i className="fas fa-chevron-left"></i>
                             </button>
 
                             <form onSubmit={onSubmit}>
@@ -109,6 +124,7 @@ const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, 
                                     onKeyDown={handleSelect}
                                     onChange={onChange} 
                                     onFocus={onFocus}
+                                    required
                                 />
 
                                 <button type="submit" className={ isSearch ? 'search-icon-btn show-icon' : 'search-icon-btn'} >

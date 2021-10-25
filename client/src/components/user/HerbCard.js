@@ -2,7 +2,7 @@ import { useState, useEffect, useContext, useRef } from 'react'
 import { useClickAway } from 'react-use';
 import HerbCardCategories from './HerbCardCategories'
 import HerbContext from '../../context/herb/herbContext'
-//import allspice from '../../img/chives.jpg'
+import '../../herbcard.css'
 
 const HerbCard = ({ showCard, setShowCard }) => {
 

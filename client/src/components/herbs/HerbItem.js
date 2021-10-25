@@ -48,9 +48,7 @@ const HerbItem = ({ herb }) => {
         <div>
             <div className="herb-list-card">
                 <div className="herb-list-card-header">
-                    <h2 className="text-primary text-left">
-                        {name}{' '}
-                    </h2>
+                    <h2>{name}{' '}</h2>
              
                     <p className="herb-list-card-btns">
                         <button className="herb-list-card-btn" onClick={updateForm}>
@@ -68,7 +66,7 @@ const HerbItem = ({ herb }) => {
                 </div>
 
                 <div className="flex-row">
-                    <h4>Other Names: </h4>
+                    <h4>Aliases: </h4>
                     <p> {other}</p>
                 </div>
 
@@ -83,7 +81,7 @@ const HerbItem = ({ herb }) => {
                 </div>
 
                 <div className="flex-row">
-                    <h4>Substitutes: </h4>
+                    <h4>Subs: </h4>
                     <p> {substitutes}</p>
                 </div>
                

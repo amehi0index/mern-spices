@@ -4,9 +4,15 @@ import HerbCard from '../user/HerbCard'
 import HerbContext from '../../context/herb/herbContext'
 import { Link } from 'react-router-dom'
 import ReactTooltip from 'react-tooltip'
+import { useMediaQuery } from 'react-responsive'
+import HerbCardMobile from '../user/HerbCardMobile'
 import '../../App.css'
 
 const Home = ({ showCard, setShowCard, setIsSearch, isSearch }) => {
+
+    const isMobile = useMediaQuery({
+        query: '(max-width: 768px)'
+    })
 
     const herbContext = useContext(HerbContext)
     const { herb } = herbContext
@@ -50,7 +56,14 @@ const Home = ({ showCard, setShowCard, setIsSearch, isSearch }) => {
 
                 {isSearch && <ReactTooltip id="add-herb-tooltip" place="left"  effect="solid"  /> }
 
-                {showCard && <HerbCard showCard={showCard}  setShowCard={setShowCard}/>}
+                {showCard && 
+                    <>
+                        {isMobile 
+                            ? <HerbCardMobile showCard={showCard}  setShowCard={setShowCard} /> 
+                            : <HerbCard showCard={showCard}  setShowCard={setShowCard}/> 
+                        }
+                    </>
+                }
             </div>
         </>
    
