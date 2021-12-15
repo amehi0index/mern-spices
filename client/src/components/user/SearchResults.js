@@ -10,9 +10,6 @@ const SearchResults = ({ setText, selected, setSelected, showResults, handleSele
 
     useEffect(() => {
         getHerbs() 
-       /* if(selected === 0){
-            liref.current.focus()
-        }*/
     }, [selected, getHerbs])
 
     function onClick (herbName, index){

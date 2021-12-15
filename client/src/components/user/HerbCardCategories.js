@@ -2,14 +2,15 @@ import React, { useState, useContext, useEffect, useRef } from 'react'
 import HerbContext from '../../context/herb/herbContext'
 import { Link } from 'react-router-dom'
 import ReactTooltip from 'react-tooltip'
-import HerbCardMobile from '../user/HerbCardMobile'
 import { useMediaQuery } from 'react-responsive'
+import formatItem from '../../util/formatItem'
+import formatCategory from '../../util/formatCategory'
+
 const HerbCardCategories = ({ categories, showFoodInfo, setShowFoodInfo, herbName, setShowCard }) => {
 
     const isMobile = useMediaQuery({
         query: '(max-width: 768px)'
     })
-
 
     const herbContext = useContext(HerbContext)
     const { getRecipesQuery } = herbContext
@@ -18,9 +19,6 @@ const HerbCardCategories = ({ categories, showFoodInfo, setShowFoodInfo, herbNam
     const [foodContent, setFoodContent] = useState('')
     const [categoriesArr, setCategoriesArr] = useState([])
     const [activeIndex, setActiveIndex] = useState(0)
-
-    const [isActive, setIsActive] = useState(false)
-
     const iconsRef = useRef(null)
 
     useEffect(() => {
@@ -41,20 +39,34 @@ const HerbCardCategories = ({ categories, showFoodInfo, setShowFoodInfo, herbNam
     const onClick = (e, cat, index) => {
 
         const foodName = e.target.id
-        const query = `${herbName.toLowerCase()} ${foodName}`
-
+        const comboQuery = `spice blend`
+        let foodContentString = formatItem(cat.content)
+        let query
+        
+        if (foodName === "misc"){
+            query = `${herbName.toLowerCase()}` 
+        }else if (foodName === "combos" ){
+            query = `${herbName.toLowerCase()} ${comboQuery}`
+        } else{
+            query = `${herbName.toLowerCase()} ${foodName}`
+        }
+        
         setShowFoodInfo(true)
         setActiveIndex(index)
-
         setFoodTitle(e.target.id)
-        setFoodContent(cat.content)
         
+        setFoodContent(() => {
+            if (foodContentString !== undefined){
+                return foodContentString
+            }else{
+                return `No Information Available for this Category.`
+            }
+        })
+
         if(foodTitle === e.target.id){
             setShowFoodInfo(!showFoodInfo)
         }
 
-      
-        //console.log(query)
         getRecipesQuery(query)
     }
 
@@ -65,40 +77,6 @@ const HerbCardCategories = ({ categories, showFoodInfo, setShowFoodInfo, herbNam
         }else if(showFoodInfo){
             return 'switch-clr'
         }
-    }
-
-    /*const toolTipEvent = () => {
-        if(showFoodInfo && activeIndex  === index ){
-            return 'click'
-        }else{
-            return
-            ''
-        }
-    }*/
-   /* const recipesOnClick = () => {
-        setShowCard(false)
-        history.push('/recipes/')
-    }*/
-
-   function formatCategory(category){
-
-        if( category != null && category.length > 1 ){
-            const formattedArray =  category.map(c => {
-                return  c.charAt(0).toUpperCase() + c.slice(1)
-        }).join(', ')
-    
-        return formattedArray
-        }else if(category.length === 1 ){
-
-            const categoryString = category[0]
-            const newCategoryArr = categoryString.split(',')
-
-            const formattedArray =  newCategoryArr.map(c => {
-                 return  c.charAt(0).toUpperCase() + c.slice(1)
-            }).join(', ')
-
-            return formattedArray
-        }       
     }
 
     return (
@@ -137,4 +115,5 @@ const HerbCardCategories = ({ categories, showFoodInfo, setShowFoodInfo, herbNam
 }
 
 export default HerbCardCategories
+
 

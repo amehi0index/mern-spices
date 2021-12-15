@@ -1,6 +1,5 @@
 import React, { useEffect, useContext, useRef, useState } from 'react'
 import { useClickAway } from 'react-use';
-
 import HerbContext from '../../context/herb/herbContext';
 import HerbCardCategories from './HerbCardCategories';
 import '../../herbcard.css'
@@ -8,10 +7,10 @@ import '../../herbcard.css'
 const HerbCardMobile = ({ showCard, setShowCard })=> {
 
     const herbContext = useContext(HerbContext)
-    const { herb, loading } = herbContext
+    const { herb } = herbContext
 
     const cardRef = useRef(null);
-    const[showFoodInfo, setShowFoodInfo] = useState(false)
+    const [showFoodInfo, setShowFoodInfo] = useState(false)
     const [activeIndex, setActiveIndex] = useState(0)
 
     const [isPanel, setIsPanel] = useState(false)
@@ -29,7 +28,7 @@ const HerbCardMobile = ({ showCard, setShowCard })=> {
         setShowCard(false)
     })
 
-  const information = [
+    const information = [
         {
           title: "Profile",
           content:  herb.description,
@@ -87,7 +86,9 @@ const HerbCardMobile = ({ showCard, setShowCard })=> {
                             <div className="herb-img-container">
                                 <img src={herb.img} alt="herb"/>
 
-                                <div className="close" onClick={closeCard}></div>
+                                <div className="close" onClick={closeCard}>
+                                    <i class="fas fa-times"></i>
+                                </div>
 
                                 <div className="card-header">
                                     <h1>{herb.name}</h1>
@@ -124,11 +125,3 @@ const HerbCardMobile = ({ showCard, setShowCard })=> {
 }
 
 export default HerbCardMobile
-
- /*const setClassName = (refName, index) => {
-        if(activeIndex  === index && isPanel ){
-            refName.current.classList.add('active')
-        }else{
-            refName.current.classList.remove('active')
-        }
-    }*/

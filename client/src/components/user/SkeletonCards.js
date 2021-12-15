@@ -7,7 +7,7 @@ const SkeltonCards = ({ recipes }) => {
         <>
             <div className="recipe-cards">
                 {dummyArr.map((dummy, index) => (
-                    <SkeletonCardItem key={index} />
+                    <SkeletonCardItem key={ index } />
                 ))}
             </div>
         </>

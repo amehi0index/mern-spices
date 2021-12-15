@@ -64,7 +64,7 @@ const HerbForm = () => {
         }
     })
 
-    const { name, other, description, cuisines, origin, substitutes, img, categories } = herb
+    const { name, other, description, cuisines, origin, substitutes, categories } = herb
     const { grains, meats, seafood, vegetables, beverages, soups, desserts, misc, combos } = categories
 
     const onChange = (e) => setHerb({...herb, [e.target.name]: e.target.value })  
@@ -245,10 +245,3 @@ const HerbForm = () => {
 }
 
 export default HerbForm
-
-
-/*{current && (
-    <div>
-        <button onClick={clearAll}>Clear</button>
-    </div>
-)}*/

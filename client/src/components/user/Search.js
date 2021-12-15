@@ -4,8 +4,6 @@ import HerbContext from '../../context/herb/herbContext'
 import AlertContext from '../../context/alert/alertContext';
 import { useClickAway } from 'react-use';
 import SearchResults from './SearchResults'
-import Alert from '../layout/Alert';
-
 
 const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, showResults }) => {
 
@@ -14,7 +12,6 @@ const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, 
 
     const alertContext = useContext(AlertContext)
     const { setAlert } = alertContext
-
 
     const textref = useRef(null)
     const input = useRef(null)
@@ -26,10 +23,6 @@ const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, 
 
     useEffect(() => {
         //input.current.focus()
-
-        /*if(filtered === null){
-            setText('')
-        }   */
     },[text, filtered])
 
     const onChange = (e) => {

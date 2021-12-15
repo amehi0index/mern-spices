@@ -1,12 +1,13 @@
 
 import React, { useContext } from 'react'
 import HerbContext from '../../context/herb/herbContext'
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom'
+import formatCategory from '../../util/formatCategory'
 
 const HerbItem = ({ herb }) => {
-
+    
     const herbContext = useContext(HerbContext)
-    const { deleteHerb, setCurrent, clearCurrent, current } = herbContext
+    const { deleteHerb, setCurrent, clearCurrent } = herbContext
     const {  _id, name, other, description, cuisines, origin, substitutes, categories } = herb
     const { grains, meats, seafood, vegetables, beverages, soups, desserts, combos, misc } = categories
 
@@ -16,28 +17,6 @@ const HerbItem = ({ herb }) => {
         deleteHerb(_id) 
         clearCurrent()
      }
-
-    const formatCategory = (category) => {
-
-        if( category != null && category.length > 1 ){
-            const formattedArray =  category.map(c => {
-                return  c.charAt(0).toUpperCase() + c.slice(1)
-        }).join(', ')
-    
-        return formattedArray
-        }else if(category.length === 1 ){
-
-            const categoryString = category[0]
-            const newCategoryArr = categoryString.split(',')
-
-            const formattedArray =  newCategoryArr.map(c => {
-                 return  c.charAt(0).toUpperCase() + c.slice(1)
-            }).join(', ')
-
-            return formattedArray
-        }   
-        
-    }
 
     const updateForm = () => {
         setCurrent(herb)

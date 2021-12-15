@@ -4,7 +4,6 @@ import HerbItem from './HerbItem'
 import Header from '../layout/Header'
 import HerbListFilter from './HerbListFilter'
 import Loader from '../layout/Loader'
-import { Link } from 'react-router-dom'
 
 const HerbList = () => {
 

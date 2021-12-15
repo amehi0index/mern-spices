@@ -414,11 +414,23 @@
   .close {
     position: absolute;
     top: 15px;
-    right: 15px;
-    height: 35px;
-    width: 35px;
-    border-radius: 8px;
-    border: 2px solid #fff;
+    right: 5%;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(9, 56, 104, 0.5);
+    color: #ffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+  }
+
+  .close:hover {
+    transform: scale(1.1);
   }
 
   /*CARD INFO*/
@@ -456,6 +468,7 @@
     padding: 4px 15px;
     font-size: 15px;
     cursor: pointer;
+    transition: all 0.5s ease;
   }
 
   .info-row .info-row-panel {
@@ -478,7 +491,8 @@
     visibility: visible;
   }
 
-  .info-row .info-row-title.active {
+  .info-row .info-row-title.active,
+  .info-row .info-row-title:hover {
     background: #093868;
     color: #fff;
   }

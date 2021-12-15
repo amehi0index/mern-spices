@@ -24,7 +24,7 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   width: 90%;
-  height: 90%;
+  height: auto;
   gap: 15px;
 }
 
@@ -38,7 +38,7 @@
 
 .recipe-card-header img {
   object-fit: cover;
-  height: 171px;
+  height: 250px;
   width: 100%;
   visibility: visible;
 }
@@ -188,18 +188,24 @@
   .recipes-container .recipes-page-title {
     font-size: 2rem;
     padding-bottom: 15px;
+    text-align: center;
   }
   .recipe-cards {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/*styles for anything under 768px*/
 @media (max-width: 768px) {
-  .recipes-container .recipes-page-title {
-    font-size: 1rem;
+  .recipe-cards {
+    grid-template-columns: repeat (2, 1fr);
   }
 
+  .recipes-container .recipes-page-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
   .recipe-cards {
     grid-template-columns: 1fr;
   }
