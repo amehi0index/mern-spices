@@ -80,8 +80,6 @@ try {
 
 ```
 
-[Back To Top](#ultimate-herb-finder)
-
 ---
 
 ## License
@@ -89,3 +87,5 @@ try {
 This project is licensed under the [MIT License](#LICENSE.txt)
 
 Copyright (c) 2021 [Amelia Hill](#https://ameliahill.com)
+
+[Back To Top](#ultimate-herb-finder)

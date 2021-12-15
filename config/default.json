@@ -1,0 +1,3 @@
+{
+    "mongoURI" : "mongodb+srv://ameHi:savorlyfe@cluster0-miijd.mongodb.net/herb-list?retryWrites=true&w=majority"
+}
