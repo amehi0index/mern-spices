@@ -28,12 +28,12 @@ body {
 .header {
   width: 100vw;
   height: 23vh;
-  padding: 2.5em;
+  padding: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-weight: 800;
-  margin-bottom: 4.375em;
+  margin-bottom: 4em;
   background-image: url('img/header-bg.jpg');
   background-size: cover;
   background-position: center;
@@ -43,12 +43,12 @@ body {
 .home-header {
   width: 100vw;
   height: 25%;
-  padding: 7em;
+  padding: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-weight: 800;
-  margin-bottom: 2.5em;
+  margin-bottom: 1em;
 }
 
 .header .brand,
@@ -61,14 +61,14 @@ body {
 .header .before,
 .home-header .before {
   font-family: 'Kaushan Script', cursive;
-  font-size: 3.5em;
+  font-size: 3em;
   color: orangered;
   line-height: 1;
 }
 
 .header h2,
 .home-header h2 {
-  font-size: 3.5em;
+  font-size: 2.5em;
   color: #fff;
   line-height: 1em;
   text-transform: uppercase;
@@ -76,9 +76,9 @@ body {
 
 .header .after,
 .home-header .after {
-  font-size: 2.5em;
+  font-size: 2.1em;
   font-weight: 600;
-  letter-spacing: 1.5em;
+  letter-spacing: 1.2em;
   line-height: 1;
   color: orangered;
   text-transform: uppercase;
@@ -110,7 +110,7 @@ body {
 }
 
 .content h2 {
-  font-size: 7.325em;
+  font-size: 6em;
   font-weight: 700;
   color: #fff;
   line-height: 1em;
@@ -118,9 +118,9 @@ body {
 }
 
 .content p {
-  font-size: 1.5em;
+  font-size: 1.25em;
   color: #fff;
-  margin: 20px 0 45px 0;
+  margin: 15px 0 30px 0;
   font-weight: 400;
   max-width: 500px;
 }
@@ -131,16 +131,13 @@ body {
   outline: none;
   border: none;
   background: #ff4500;
-  font-size: 1.1em;
-  padding: 20px 45px;
+  font-size: 1em;
+  padding: 16px 38px;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 600;
   color: #fff;
   letter-spacing: 2px;
-}
-
-.expand-search-btn {
   cursor: pointer;
   transition: all 0.02s ease;
 }
@@ -153,7 +150,6 @@ body {
   position: absolute;
   right: 50px;
   bottom: 30px;
-
   background: #ff4500;
   font-size: 1em;
   font-weight: 600;
@@ -199,8 +195,8 @@ body {
 
 /*Input Rows*/
 .input-span {
-  min-height: 60px;
-  max-height: 60px;
+  min-height: 50px;
+  max-height: 50px;
   display: flex;
   transition: all 0.5s ease-in 2s;
 }
@@ -221,8 +217,8 @@ body {
   outline: none;
   border: none;
   background: #ff4500;
-  font-size: 1.1em;
-  padding: 20px 45px;
+  font-size: 1em;
+  padding: 16px 38px;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 600;
@@ -300,7 +296,7 @@ body {
   border: none;
   outline: none;
   background: #ff4500;
-  font-size: 1.3em;
+  font-size: 1.1em;
   font-weight: 500;
   color: #fff;
 
@@ -351,7 +347,7 @@ body {
 
 .herb-list li {
   background: rgba(7, 61, 116, 0.5);
-  padding: 0 0 5px 20px;
+  padding-left: 20px;
   color: orangered;
   color: #f5f5f5;
   transition: 0.2s ease;
@@ -447,9 +443,8 @@ body {
   outline: none;
   border: none;
   box-shadow: 2px 2px 3px rgba(129, 142, 155, 0.5);
-  font-size: 2em;
-  padding: 25px 25px;
-
+  font-size: 1.5em;
+  padding: 20px;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 600;
@@ -490,7 +485,7 @@ body {
   margin: 30px 0;
   padding: 40px;
   flex-direction: column;
-  font-size: 1.2em;
+  font-size: 1em;
   border-radius: 3px;
 }
 
@@ -592,9 +587,7 @@ body {
   border: none;
   box-shadow: 2px 2px 3px rgba(129, 142, 155, 0.5);
   font-size: 1.5em;
-
-  padding: 25px;
-
+  padding: 20px;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 600;
@@ -643,7 +636,7 @@ body {
   padding: 10px 20px;
   border-radius: 6px;
   color: #0f4269;
-  font-size: 2em;
+  font-size: 1.5em;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
 }
@@ -671,8 +664,8 @@ body {
   border: 1px solid #dfdcdc;
   border-radius: 4px;
   outline: none;
-  padding: 1.25em;
-  font-size: 1.2em;
+  padding: 1em;
+  font-size: 1em;
   width: 50%;
   align-self: center;
 }
@@ -701,10 +694,11 @@ body {
 .herb-list-card {
   width: 100%;
   padding: 20px;
-  height: 330px;
+  height: 300px;
   background: #f0e9e9e6;
   border-radius: 2px;
   overflow-y: scroll;
+  font-size: 13px;
 }
 
 .herb-list-card-header {
@@ -715,7 +709,7 @@ body {
 
 .herb-list-card-btns i {
   color: #134972;
-  font-size: 18px;
+  font-size: 16px;
   margin: 4px;
 }
 
