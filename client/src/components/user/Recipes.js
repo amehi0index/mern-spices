@@ -65,6 +65,8 @@ const Recipes = ({ showCard, setShowCard, recipesQuery }) => {
                 return newTitle
             }
         })
+
+        document.body.style.overflowY= "scroll"
       
     }, [recipesQuery, pageTitle, recipes, setShowCard, history, setIsLoading, setRecipes, setPageTitle, getData ])
 

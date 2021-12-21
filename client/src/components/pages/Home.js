@@ -28,7 +28,7 @@ const Home = ({ showCard, setShowCard, setIsSearch, isSearch, loading }) => {
     const showSearch = () => {
         setIsSearch(true)
     }
-
+    
     return (
         <>
             <div className="container">
@@ -50,7 +50,14 @@ const Home = ({ showCard, setShowCard, setIsSearch, isSearch, loading }) => {
                     <Search isSearch={isSearch} setIsSearch={setIsSearch} showCard={showCard}  setShowCard={setShowCard} showResults={showResults} setShowResults={setShowResults} />  
                 </div>
         
-                <Link to='/herb-form' className={isSearch ? 'to-herb-form-btn show': 'to-herb-form-btn'} data-tip="Add New Herb" data-for="add-herb-tooltip" target="_blank" rel="noopener noreferrer">
+                <Link 
+                    to='/herb-form'
+                    className={isSearch ? 'to-herb-form-btn show': 'to-herb-form-btn'}        
+                    data-tip="Add New Herb" 
+                    data-for="add-herb-tooltip" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                 >
                     <i className="fas fa-plus"></i>
                 </Link>
 

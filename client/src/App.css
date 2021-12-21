@@ -7,7 +7,7 @@
 body {
   display: flex;
   font-family: 'Poppins', sans-serif;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .container {
@@ -18,7 +18,7 @@ body {
   position: relative;
   height: 100vh;
   width: 100%;
-  margin: auto;
+  /*margin: auto;*/
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -43,12 +43,12 @@ body {
 .home-header {
   width: 100vw;
   height: 25%;
-  padding: 60px;
+  padding: 50px 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-weight: 800;
-  margin-bottom: 1em;
+  margin-bottom: 0.8em;
 }
 
 .header .brand,
@@ -61,14 +61,15 @@ body {
 .header .before,
 .home-header .before {
   font-family: 'Kaushan Script', cursive;
-  font-size: 3em;
+  font-size: 2.75em;
   color: orangered;
   line-height: 1;
+  letter-spacing: 2px;
 }
 
 .header h2,
 .home-header h2 {
-  font-size: 2.5em;
+  font-size: 2.25em;
   color: #fff;
   line-height: 1em;
   text-transform: uppercase;
@@ -76,9 +77,9 @@ body {
 
 .header .after,
 .home-header .after {
-  font-size: 2.1em;
+  font-size: 2em;
   font-weight: 600;
-  letter-spacing: 1.2em;
+  letter-spacing: 1.1em;
   line-height: 1;
   color: orangered;
   text-transform: uppercase;
@@ -120,7 +121,7 @@ body {
 .content p {
   font-size: 1.25em;
   color: #fff;
-  margin: 18px 0 30px 0;
+  margin: 15px 0 25px 0;
   font-weight: 400;
   max-width: 500px;
 }
@@ -132,7 +133,7 @@ body {
   border: none;
   background: #ff4500;
   font-size: 1em;
-  padding: 16px 38px;
+  padding: 16px 34px;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 600;
@@ -195,9 +196,11 @@ body {
 
 /*Input Rows*/
 .input-span {
-  min-height: 50px;
-  max-height: 50px;
+  min-height: 45px;
+  max-height: 45px;
   display: flex;
+  align-items: center;
+  justify-content: center;
   transition: all 0.5s ease-in 2s;
 }
 
@@ -218,7 +221,7 @@ body {
   border: none;
   background: #ff4500;
   font-size: 1em;
-  padding: 16px 38px;
+  padding: 14px 38px;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 600;
@@ -481,7 +484,7 @@ body {
   align-items: center;
   background: #f0e9e9e6;
   box-shadow: 1px 1px 5px rgba(129, 142, 155, 0.5);
-  width: 80%;
+  width: 75%;
   margin: 30px 0;
   padding: 40px;
   flex-direction: column;
@@ -522,7 +525,7 @@ body {
   border: 1px solid #dfdcdc;
   outline: none;
   padding: 15px;
-  width: 70%;
+  width: 75%;
   min-width: 60%;
   font-size: 1em;
 }
@@ -567,7 +570,7 @@ body {
   border: 1px solid #dfdcdc;
   outline: none;
   padding: 15px;
-  width: 80%;
+  width: 75%;
   min-width: 60%;
   font-size: 1em;
 }
@@ -586,7 +589,7 @@ body {
   outline: none;
   border: none;
   box-shadow: 2px 2px 3px rgba(129, 142, 155, 0.5);
-  font-size: 1.5em;
+  font-size: 1.4em;
   padding: 20px;
   text-transform: uppercase;
   text-decoration: none;
