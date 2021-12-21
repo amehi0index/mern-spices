@@ -15,7 +15,7 @@
 }
 
 .card.show {
-  transform: translateY(-65%);
+  transform: translateY(-60%);
 }
 
 .card .card-header h1 {
