@@ -8,14 +8,14 @@
   color: rgb(6, 52, 99);
   width: 60%;
   border-radius: 3px;
-  min-height: 500px;
-  margin: 30px 5.5%;
+  min-height: 475px;
+  margin: 25px 5.5%;
   transform: translateY(120%);
   transition: all 0.5s ease-in;
 }
 
 .card.show {
-  transform: translateY(-60%);
+  transform: translateY(-61%);
 }
 
 .card .card-header h1 {
