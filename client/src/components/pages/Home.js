@@ -19,7 +19,6 @@ const Home = ({ showCard, setShowCard, setIsSearch, isSearch, loading }) => {
     const [showResults, setShowResults] = useState(false)
 
     useEffect(()=> {
-
         if(herb){
             setShowCard(true)
         }
