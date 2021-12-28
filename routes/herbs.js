@@ -91,7 +91,6 @@ router.post('/upload', upload.single('img'), (req, res) => {
 
 //UPDATE an Entry
 router.put('/:id', async (req, res) => {
-
     const { 
         name,
         other,
@@ -107,12 +106,16 @@ router.put('/:id', async (req, res) => {
         name,
         other,
         description, 
-        img, 
+        img,
         cuisines,
         origin,
         substitutes,
         categories
     }
+
+    /*if(req.file){
+       herbFields.img = req.file
+    }*/
 
     try {
 

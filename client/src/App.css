@@ -196,8 +196,8 @@ body {
 
 /*Input Rows*/
 .input-span {
-  min-height: 45px;
-  max-height: 45px;
+  min-height: 49px;
+  max-height: 49px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -214,14 +214,16 @@ body {
 
 .home-btn {
   grid-area: home-btn;
-  width: 21.87%;
-  min-width: 21.87%;
+  width: 26.87%;
+  min-width: 26.87%;
   display: flex;
+  align-items: center;
+  justify-content: center;
   outline: none;
   border: none;
   background: #ff4500;
   font-size: 1em;
-  padding: 14px 38px;
+  padding: 15px 38px;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 600;
@@ -325,13 +327,13 @@ body {
 
 .herb-list-span .space-1 {
   grid-area: space-1;
-  width: 21.87%;
+  width: 26.87%;
 }
 
 /* HERBLIST UL */
 .herb-list-container {
   grid-area: list-container;
-  width: 78.13%;
+  width: 73.13%;
 }
 
 .herb-list {
@@ -862,11 +864,10 @@ body {
   }
 
   .expand-search-btn,
-  .home-btn,
   .food-info-btn,
   .form-container form .herb-form-btn {
     font-size: 1em;
-    padding: 16px 32px;
+    padding: 15px 32px;
   }
 
   .to-herb-form-btn,

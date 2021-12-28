@@ -105,8 +105,11 @@ const HerbForm = () => {
                 addHerb(herb)
             } 
         }else{
-            herb.img = image
-            updateHerb(herb)
+            if(image){
+                updateHerb({...herb, img:image})
+            }else{
+                updateHerb({...herb})
+            }
         }
         clearAll()
     }

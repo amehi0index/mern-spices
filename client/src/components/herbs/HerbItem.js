@@ -7,7 +7,7 @@ import formatCategory from '../../util/formatCategory'
 const HerbItem = ({ herb }) => {
     
     const herbContext = useContext(HerbContext)
-    const { deleteHerb, setCurrent, clearCurrent } = herbContext
+    const { deleteHerb, setCurrent, clearCurrent, clearFilter } = herbContext
     const {  _id, name, other, description, cuisines, origin, substitutes, categories } = herb
     const { grains, meats, seafood, vegetables, beverages, soups, desserts, combos, misc } = categories
 
@@ -19,6 +19,7 @@ const HerbItem = ({ herb }) => {
      }
 
     const updateForm = () => {
+        clearFilter()
         setCurrent(herb)
         history.push('./herb-form')
     }
