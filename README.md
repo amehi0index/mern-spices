@@ -17,7 +17,7 @@
 
 ## Description
 
-This Application allows a user to search for an herb or spice by name and to match that particular herb or spice with a complentary food or recipe. The MERN Stack version of this applicaction also contains the functionality to add, update and/or delete an herb or spice from the database.
+This Application allows a user to search for an herb or spice by name and to match that particular herb or spice with a complementary food or recipe. The MERN Stack version of this applicaction also contains the functionality to add, update and/or delete an herb or spice from the database.
 
 #### Technologies
 
