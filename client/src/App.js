@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './components/pages/Home';
 import HerbState from './context/herb/herbState';
@@ -11,10 +11,15 @@ import './App.css';
 
 const App = () => {
 
+  const loaderContainer = document.querySelector('.loader-container')
   const recipesQuery = localStorage.getItem('query')
 
   const[showCard, setShowCard] = useState(false)
   const [isSearch, setIsSearch] = useState(false)
+
+  useEffect(()=> {
+    loaderContainer.classList.add('finish')
+  },[loaderContainer])
 
   return (
     <Router>
