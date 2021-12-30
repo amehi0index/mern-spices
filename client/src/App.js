@@ -18,7 +18,9 @@ const App = () => {
   const [isSearch, setIsSearch] = useState(false)
 
   useEffect(()=> {
-    loaderContainer.classList.add('finish')
+    if(loaderContainer){
+      loaderContainer.classList.add('finish')
+    }
   },[loaderContainer])
 
   return (
