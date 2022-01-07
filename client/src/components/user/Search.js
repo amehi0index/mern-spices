@@ -17,7 +17,7 @@ const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, 
     const input = useRef(null)
     const herbListRef = useRef(null)
    
-    const [text, setText] = useState('')
+    const [text, setText] = useState('Enter Herb or Spice')
     const [homeBtnVal, setHomeBtnVal] = useState('search')
     const [selected, setSelected] = useState(0)
 
