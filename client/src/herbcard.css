@@ -283,8 +283,8 @@
   overflow: hidden;
   position: relative;
   width: 96%;
-  min-height: 240px;
-  max-height: 240px;
+  min-height: 224px;
+  max-height: 224px;
   padding: 20px 20px;
   background: linear-gradient(rgb(20, 113, 184), rgb(0, 0, 7));
   color: #f5f5f5;
@@ -295,7 +295,7 @@
 
 .food-info.show {
   z-index: 500;
-  transform: translateY(-112%);
+  transform: translateY(-111%);
 }
 
 .food-info h3 {
