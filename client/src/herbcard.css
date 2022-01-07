@@ -295,7 +295,7 @@
 
 .food-info.show {
   z-index: 500;
-  transform: translateY(-111%);
+  transform: translateY(-112%);
 }
 
 .food-info h3 {
