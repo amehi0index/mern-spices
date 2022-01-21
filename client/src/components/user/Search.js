@@ -125,9 +125,9 @@ const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, 
                                 </button>
                             </form>
 
-                         </div>
+                        </div>
 
-                         {text.length > 0  && 
+                        {text.length > 0  && 
                             <div className = "herb-list-span">
                                 <div className="space-1"></div>
                                 <div className="herb-list-container">
@@ -138,12 +138,14 @@ const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, 
                                     }
                                     <div className="space-2"></div>
                                 </div>
+                              
                             </div>
                         }
                     </div>
                 </div>
             </div>
         </div>
+   
     )
 }
 

@@ -991,10 +991,6 @@ body {
     letter-spacing: 1px;
   }
 
-  .search-icon-btn {
-    display: none;
-  }
-
   .home-btn {
     display: none;
   }
@@ -1005,8 +1001,12 @@ body {
     justify-content: center;
     font-size: 14px;
     padding: 12px 8px;
+    background: transparent;
   }
 
+  .input-results {
+    width: 85%;
+  }
   .search .show-input {
     display: flex;
     align-items: center;
@@ -1034,10 +1034,6 @@ body {
 
   .herb-list-container {
     width: 85%;
-  }
-
-  .space-2 {
-    display: none;
   }
 
   /*ADD HERB FORM*/
