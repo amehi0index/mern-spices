@@ -2,7 +2,7 @@ import React, { useEffect, useContext, useRef, useState } from 'react'
 import { useClickAway } from 'react-use';
 import HerbContext from '../../context/herb/herbContext';
 import HerbCardCategories from './HerbCardCategories';
-import '../../herbcard.css'
+import '../../styles/herbcard.css'
 
 const HerbCardMobile = ({ showCard, setShowCard })=> {
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../cards.css';
+import '../../styles/cards.css';
 
 const SkeletonCardItem = () => {
     return (

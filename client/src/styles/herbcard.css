@@ -199,71 +199,71 @@
 }
 
 .food-icons #grains {
-  background-image: url('./icons/bread.svg');
+  background-image: url('../icons/bread.svg');
 }
 
 .food-icons #grains:hover {
-  background-image: url('./icons/bread-orange.svg');
+  background-image: url('../icons/bread-orange.svg');
 }
 
 .food-icons #meats {
-  background-image: url('./icons/meat.svg');
+  background-image: url('../icons/meat.svg');
 }
 
 .food-icons #meats:hover {
-  background-image: url('./icons/meat-orange.svg');
+  background-image: url('../icons/meat-orange.svg');
 }
 
 .food-icons #seafood {
-  background-image: url('./icons/lobster.svg');
+  background-image: url('../icons/lobster.svg');
 }
 
 .food-icons #seafood:hover {
-  background-image: url('./icons/lobster-orange.svg');
+  background-image: url('../icons/lobster-orange.svg');
 }
 .food-icons #vegetables {
-  background-image: url('./icons/broccoli.svg');
+  background-image: url('../icons/broccoli.svg');
 }
 
 .food-icons #vegetables:hover {
-  background-image: url('./icons/broccoli-orange.svg');
+  background-image: url('../icons/broccoli-orange.svg');
 }
 .food-icons #beverages {
-  background-image: url('./icons/lemonade.svg');
+  background-image: url('../icons/lemonade.svg');
 }
 
 .food-icons #beverages:hover {
-  background-image: url('./icons/lemonade-orange.svg');
+  background-image: url('../icons/lemonade-orange.svg');
 }
 .food-icons #soups {
-  background-image: url('./icons/soup.svg');
+  background-image: url('../icons/soup.svg');
 }
 
 .food-icons #soups:hover {
-  background-image: url('./icons/soup-orange.svg');
+  background-image: url('../icons/soup-orange.svg');
 }
 
 .food-icons #desserts {
-  background-image: url('./icons/cupcake.svg');
+  background-image: url('../icons/cupcake.svg');
 }
 
 .food-icons #desserts:hover {
-  background-image: url('./icons/cupcake-orange.svg');
+  background-image: url('../icons/cupcake-orange.svg');
 }
 .food-icons #combos {
-  background-image: url('./icons/leaf.svg');
+  background-image: url('../icons/leaf.svg');
 }
 
 .food-icons #combos:hover {
-  background-image: url('./icons/leaf-orange.svg');
+  background-image: url('../icons/leaf-orange.svg');
 }
 
 .food-icons #misc {
-  background-image: url('./icons/spoon.svg');
+  background-image: url('../icons/spoon.svg');
 }
 
 .food-icons #misc:hover {
-  background-image: url('./icons/spoon-orange.svg');
+  background-image: url('../icons/spoon-orange.svg');
 }
 
 .food-icons .white-icon {
