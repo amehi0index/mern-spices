@@ -67,9 +67,6 @@ const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, 
 
         if (text ===''){
             setAlert('Please Enter an Herb or Spice', 'light');
-        }
-        else if (!filtered.includes(text)){
-            setAlert(`Click the plus button to add herb or spice to the collection.`, 'danger');
         } else{
             getHerbName(text)
             setText('');

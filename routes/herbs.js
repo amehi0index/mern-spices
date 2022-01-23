@@ -25,12 +25,12 @@ function checkFileType(file, cb){
     }
 }
 
-const upload = multer({
+/*const upload = multer({
     storage,
     fileFilter: function(req, file, cb){
         checkFileType(file, cb)
     }
-})
+})*/
 
 //GET Herbs List
 router.get('/', async (req, res) => {
@@ -43,7 +43,7 @@ router.get('/', async (req, res) => {
     }
 })
 
-//POST a New Entry
+/*//POST a New Entry
 router.post('/', async (req, res) => {
     const { 
         name,
@@ -113,10 +113,6 @@ router.put('/:id', async (req, res) => {
         categories
     }
 
-    /*if(req.file){
-       herbFields.img = req.file
-    }*/
-
     try {
 
         let herb = await Herb.findById(req.params.id)
@@ -149,6 +145,6 @@ router.delete('/:id',async(req, res) => {
         console.error(err.message)
         res.status(500).send('Server Error')
     }
-})
+})*/
 
 module.exports = router
