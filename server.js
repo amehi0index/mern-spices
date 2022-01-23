@@ -18,9 +18,9 @@ app.set('trust proxy', 1)
 connectDB()
 
 app.use(express.json())
-app.use('/uploads', express.static(path.join(path.resolve(), '/uploads')))
-app.use('/api/herbs', require('./routes/herbs'))
-app.use('/api/recipes', require('./routes/recipes'))
+//app.use('/uploads', express.static(path.join(path.resolve(), '/uploads')))
+//app.use('/api/herbs', require('./routes/herbs'))
+//app.use('/api/recipes', require('./routes/recipes'))
 app.use(cors(corsOptions))
 
 //SERVE STATIC ASSETS IN PRODUCTION?

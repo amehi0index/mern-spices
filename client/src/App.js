@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './components/pages/Home';
 import HerbState from './context/herb/herbState';
 import AlertState from './context/alert/alertState';
+import Alert from './components/layout/Alert';
 import Recipes from './components/user/Recipes';
 import Search from './components/user/Search';
 import HerbForm from './components/herbs/HerbForm';
@@ -28,6 +29,7 @@ const App = () => {
       <>
         <HerbState>
           <AlertState>
+          <Alert />
             <Route exact path="/">
               <Home showCard={showCard} setShowCard ={setShowCard} isSearch={isSearch} setIsSearch={setIsSearch} />
             </Route>

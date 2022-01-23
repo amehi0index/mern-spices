@@ -811,6 +811,11 @@ body {
 
 /*ALERTS*/
 .alert {
+  position: fixed;
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
   padding: 0.7rem;
   margin: 1rem 0;
   opacity: 0.9;

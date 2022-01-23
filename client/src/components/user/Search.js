@@ -4,6 +4,7 @@ import HerbContext from '../../context/herb/herbContext'
 import AlertContext from '../../context/alert/alertContext';
 import { useClickAway } from 'react-use';
 import SearchResults from './SearchResults'
+import Alert from '../layout/Alert';
 
 const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, showResults }) => {
 
@@ -64,8 +65,11 @@ const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, 
     const onSubmit = e => {
         e.preventDefault()  
 
-        if (text===''){
+        if (text ===''){
             setAlert('Please Enter an Herb or Spice', 'light');
+        }
+        else if (!filtered.includes(text)){
+            setAlert(`Click the plus button to add herb or spice to the collection.`, 'danger');
         } else{
             getHerbName(text)
             setText('');
@@ -73,6 +77,7 @@ const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, 
             input.current.blur()
         }
     }
+
     const onFocus = ()=>{
        setShowCard(false)
        setSelected(0)
@@ -93,7 +98,7 @@ const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, 
             <div className={ isSearch ? 'search' : 'search hidden'}>
                 <div className="show-input">     
                     <div className="input-results">
-                        <div className={ isSearch ?'input-span show' : 'input-span'}>
+                        <div className={ isSearch ?'input-span show' : 'input-span'} >
                             <button className={ isSearch ? 'home-btn hide' : 'home-btn'} onClick={onClick}>
                                 <span className={isSearch ? 'back-arrow show' : 'back-arrow'}>
                                     <i className="fas fa-chevron-left"></i>
@@ -126,6 +131,8 @@ const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, 
                             </form>
 
                         </div>
+
+                        <Alert />
 
                         {text.length > 0  && 
                             <div className = "herb-list-span">
