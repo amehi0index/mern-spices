@@ -4,12 +4,11 @@ import HerbContext from '../../context/herb/herbContext'
 import AlertContext from '../../context/alert/alertContext';
 import { useClickAway } from 'react-use';
 import SearchResults from './SearchResults'
-import Alert from '../layout/Alert';
 
 const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, showResults }) => {
 
     const herbContext = useContext(HerbContext)
-    const { filtered, filterHerbs, getHerbName, clearFilter } = herbContext
+    const { filtered, filterHerbs, getHerbName, clearFilter, herbs } = herbContext
 
     const alertContext = useContext(AlertContext)
     const { setAlert } = alertContext
@@ -65,8 +64,12 @@ const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, 
     const onSubmit = e => {
         e.preventDefault()  
 
-        if (text ===''){
-            setAlert('Please Enter an Herb or Spice', 'light');
+        let match = herbs.find(h => h.name.toLowerCase() === text.toLowerCase())
+
+        if(!match || match === undefined){
+            //setAlert('Herb or Spice Name Not Found.', 'primary')
+        }else if (text ===''){
+            //setAlert('Please Enter an Herb or Spice', 'light') 
         } else{
             getHerbName(text)
             setText('');
@@ -128,8 +131,6 @@ const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, 
                             </form>
 
                         </div>
-
-                        <Alert />
 
                         {text.length > 0  && 
                             <div className = "herb-list-span">

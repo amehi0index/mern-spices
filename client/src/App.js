@@ -29,7 +29,7 @@ const App = () => {
       <>
         <HerbState>
           <AlertState>
-          <Alert />
+            <Alert />
             <Route exact path="/">
               <Home showCard={showCard} setShowCard ={setShowCard} isSearch={isSearch} setIsSearch={setIsSearch} />
             </Route>
