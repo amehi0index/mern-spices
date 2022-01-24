@@ -41,8 +41,7 @@ const Home = ({ showCard, setShowCard, setIsSearch, isSearch, loading }) => {
                 <div className="content">
                     <div className={ isSearch ? 'welcome hide-welcome' :'welcome'}>
                         <h2>Find Your Flavor</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                                Deserunt doloremque enim voluptatum molestiae.
+                        <p> Take your recipes to the next level. Find the perfect herb or spice to complement your ingredients with The Ultimate Herb and Spice Finder.
                         </p>
                         <button className={ isSearch ? 'expand-search-btn hide' : 'expand-search-btn'} onClick={showSearch}>Search</button>
                     </div>
