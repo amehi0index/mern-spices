@@ -828,9 +828,9 @@ body {
   color: #fff;
 }
 
-.alert-light {
-  background: #f4f4f4;
-  color: #333;
+.alert-orange {
+  background: #ff4500;
+  color: #fff;
 }
 
 .alert-dark {

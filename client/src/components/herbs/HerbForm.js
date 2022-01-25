@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Header from '../layout/Header'
 import ReactTooltip from 'react-tooltip';
+import AlertContext from '../../context/alert/alertContext'
 
 const HerbForm = () => {
 
@@ -13,6 +14,9 @@ const HerbForm = () => {
 
     const herbContext = useContext(HerbContext)
     const { addHerb, updateHerb, current, clearCurrent } = herbContext
+    
+    const alertContext = useContext(AlertContext)
+    const { setAlert } = alertContext
 
     //Prefill form for editing
         useEffect (() => {
@@ -103,6 +107,7 @@ const HerbForm = () => {
                 herb.img = image
                 console.log(herb)
                 addHerb(herb)
+                setAlert(`${herb.name} has been added to the collection`, 'primary')
             } 
         }else{
             if(image){
@@ -110,6 +115,7 @@ const HerbForm = () => {
             }else{
                 updateHerb({...herb})
             }
+            setAlert(`Selection has been updated`, 'primary')
         }
         clearAll()
     }

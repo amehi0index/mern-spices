@@ -1,32 +1,37 @@
-import React, {useReducer} from 'react';
+import React, { useReducer } from 'react';
+import {v4 as uuid} from 'uuid'
 import AlertContext from './alertContext';
-import AlertReducer from './alertReducer';
-
+import alertReducer from './alertReducer';
 import {
-  SET_ALERT, REMOVE_ALERT
+   SET_ALERT,
+   REMOVE_ALERT
 } from '../types';
 
+/*Alert component, alertContext, alert css styles from Brad Traversy*/
 const AlertState = props => {
-    const initialState = null;
+    const initialState = [];
 
-    const [state, dispatch] = useReducer(AlertReducer, initialState);
-
+    const [state, dispatch] = useReducer(alertReducer, initialState);
+   
     //Set Alert
-    const setAlert = (msg, type) => {
-        dispatch ({
+    const setAlert = (msg, type, timeout = 4000) => {
+        const id = uuid()
+        dispatch({
             type: SET_ALERT,
-            payload: { msg, type }
-        });
+            payload: { msg, type, id }
+        })
+        setTimeout (() => dispatch ({ type: REMOVE_ALERT, payload: id }), timeout)
+    }
 
-        setTimeout(()=> dispatch({ REMOVE_ALERT }), 2000);
-    };
+    return (
+        <AlertContext.Provider value={{
+            alerts: state,
+            setAlert
+            }}>
+           {props.children} 
+        </AlertContext.Provider>
+    )
 
-    return <AlertContext.Provider value={{
-       alert: state,
-       setAlert
-    }}>
-        {props.children}
-    </AlertContext.Provider>
-}
+};
 
-    export default AlertState;
+export default AlertState;
