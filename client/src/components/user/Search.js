@@ -8,7 +8,7 @@ import SearchResults from './SearchResults'
 const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, showResults }) => {
 
     const herbContext = useContext(HerbContext)
-    const { filtered, filterHerbs, getHerbName, clearFilter, herbs } = herbContext
+    const { filtered, filterHerbs, getHerbName, clearFilter, herbs, getHerbs } = herbContext
 
     const alertContext = useContext(AlertContext)
     const { setAlert } = alertContext
@@ -17,7 +17,7 @@ const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, 
     const input = useRef(null)
     const herbListRef = useRef(null)
    
-    const [text, setText] = useState('Enter Herb or Spice')
+    const [text, setText] = useState('Enter Herb or Spice Name')
     const [homeBtnVal, setHomeBtnVal] = useState('search')
     const [selected, setSelected] = useState(0)
 
@@ -25,9 +25,10 @@ const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, 
         //input.current.focus()
     },[text, filtered])
 
-    const onChange = (e) => {
-        setShowResults(true) 
-        setText(e.target.value)    
+    const onChange = async (e) => {
+        setShowResults(true)
+        setText(e.target.value)
+        getHerbs(e.target.value)
         filterHerbs(e.target.value)
     }
 
@@ -132,7 +133,7 @@ const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, 
 
                         </div>
 
-                        {text.length > 0  && 
+                        {text !== ''  && 
                             <div className = "herb-list-span">
                                 <div className="space-1"></div>
                                 <div className="herb-list-container">

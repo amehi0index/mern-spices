@@ -36,12 +36,12 @@ const HerbState = (props) => {
 
         try {
             const res = await axios.get('/api/herbs')
-            dispatch({
+            return dispatch({
                 type: GET_HERBS,
                 payload: res.data
             })
         } catch (err) {
-            dispatch({
+            return  dispatch({
                 type: HERB_ERROR,
                 payload: err.response.msg
             })

@@ -8,9 +8,9 @@ const SearchResults = ({ setText, selected, setSelected, showResults, handleSele
 
     const liref = useRef(null)
 
-    useEffect(() => {
+    /*useEffect(() => {
         getHerbs() 
-    }, [selected, getHerbs])
+    }, [selected, getHerbs])*/
 
     function onClick (herbName, index){
        setSelected(index)
@@ -19,7 +19,7 @@ const SearchResults = ({ setText, selected, setSelected, showResults, handleSele
 
     return (
         <>
-            {showResults && filtered.length > 0 && filtered.map((herb, index)=> (
+            {showResults && filtered !== null  && filtered.map((herb, index)=> (
                 <li 
                     tabIndex="0"
                     ref={liref} 
