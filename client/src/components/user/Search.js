@@ -17,7 +17,8 @@ const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, 
     const input = useRef(null)
     const herbListRef = useRef(null)
    
-    const [text, setText] = useState('Enter Herb or Spice Name')
+    // const [text, setText] = useState('Enter Herb or Spice Name')
+    const [text, setText] = useState('')
     const [homeBtnVal, setHomeBtnVal] = useState('search')
     const [selected, setSelected] = useState(0)
 
@@ -26,10 +27,12 @@ const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, 
     },[text, filtered])
 
     const onChange = async (e) => {
-        setShowResults(true)
         setText(e.target.value)
-        getHerbs(e.target.value)
-        filterHerbs(e.target.value)
+        setShowResults(true)
+        await getHerbs()
+        if(e.target.value !== ''){
+            filterHerbs(e.target.value)
+        }
     }
 
     const handleSelect = (e) => { 
