@@ -16,8 +16,7 @@ const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, 
     const textref = useRef(null)
     const input = useRef(null)
     const herbListRef = useRef(null)
-   
-    // const [text, setText] = useState('Enter Herb or Spice Name')
+  
     const [text, setText] = useState('')
     const [homeBtnVal, setHomeBtnVal] = useState('search')
     const [selected, setSelected] = useState(0)
@@ -133,7 +132,6 @@ const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, 
                                     <i className="fas fa-search"></i>
                                 </button>
                             </form>
-
                         </div>
 
                         {text !== ''  && 
