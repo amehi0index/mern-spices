@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import HerbList from '../components/herbs/HerbList';
@@ -24,33 +24,32 @@ const Routes = () => {
       }
     },[loaderContainer])
 
-  return (
-    <Router>
-    <>
-      <HerbState>
-        <AlertState>
-          <Alert />
-          <Route exact path="/">
-            <Home showCard={showCard} setShowCard ={setShowCard} isSearch={isSearch} setIsSearch={setIsSearch} />
-          </Route>
-          <Route path="/recipes">
-            <Recipes showCard={showCard} setShowCard ={setShowCard} recipesQuery={recipesQuery} />
-          </Route>
-          <Route path="/search">
-            <Search showCard={showCard} setShowCard ={setShowCard} isSearch={isSearch} setIsSearch={setIsSearch}  />
-          </Route>
-          <Route path="/herb-form">
-            <HerbForm />
-          </Route>
-          <Route path="/herb-list">
-            <HerbList />
-          </Route>
-        </AlertState>
-      </HerbState>
-    </>
-  </Router>
-
-  )
+    return (
+        <Router>
+            <>
+                <HerbState>
+                    <AlertState>
+                        <Alert />
+                        <Route exact path="/">
+                            <Home showCard={showCard} setShowCard ={setShowCard} isSearch={isSearch} setIsSearch={setIsSearch} />
+                        </Route>
+                        <Route path="/recipes">
+                            <Recipes showCard={showCard} setShowCard ={setShowCard} recipesQuery={recipesQuery} />
+                        </Route>
+                        <Route path="/search">
+                            <Search showCard={showCard} setShowCard ={setShowCard} isSearch={isSearch} setIsSearch={setIsSearch}  />
+                        </Route>
+                        <Route path="/herb-form">
+                            <HerbForm />
+                        </Route>
+                        <Route path="/herb-list">
+                            <HerbList />
+                        </Route>
+                    </AlertState>
+                </HerbState>
+            </>
+        </Router>
+    )
 }
 
 export default Routes
