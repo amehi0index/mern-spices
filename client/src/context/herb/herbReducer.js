@@ -23,9 +23,9 @@ import {
                 }
             case ADD_HERB: 
                 return{
-                 ...state,
-                herbs: [ ...state.herbs, action.payload ],
-                loading: false
+                    ...state,
+                    herbs: [...state.herbs, action.payload ],
+                    loading: false
                 }
             case UPDATE_HERB:
                 return{

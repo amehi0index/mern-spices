@@ -88,7 +88,7 @@ const HerbForm = () => {
         try {
           const config = {
               headers: {
-                  'Content-Type': 'multipart/form-data'
+                'Content-Type': 'multipart/form-data'
               }
           } 
           
@@ -120,7 +120,7 @@ const HerbForm = () => {
         clearAll()
     }
 
-    const clearAll = () =>{
+    const clearAll = () => {
         clearCurrent()
         fileRef.current.value = ''
         window.scrollTo({
