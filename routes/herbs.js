@@ -133,7 +133,7 @@ router.put('/:id', async (req, res) => {
 })
 
 //DELETE an Entry
-router.delete('/:id',async(req, res) => {
+router.delete('/:id', async(req, res) => {
     try {
         let herb = await Herb.findById(req.params.id)
     
