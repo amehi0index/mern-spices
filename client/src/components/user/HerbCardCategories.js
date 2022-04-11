@@ -84,7 +84,6 @@ const HerbCardCategories = ({ categories, showFoodInfo, setShowFoodInfo, herbNam
             <div className={!showFoodInfo ? 'food-categories'  : 'food-categories switch-bg'}> 
                 <div className="food-icons">
                  {categoriesArr.map((cat, index) => (
-                     <>
                         <div 
                             ref={iconsRef} 
                             key={index} 
@@ -92,7 +91,6 @@ const HerbCardCategories = ({ categories, showFoodInfo, setShowFoodInfo, herbNam
                             id={cat.id}  
                             onClick={(e)=> onClick(e, cat, index)}
                         >{!isMobile && cat.category}</div>
-                      </>
                  ))}
                 </div>
                 <div 

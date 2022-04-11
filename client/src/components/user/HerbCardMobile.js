@@ -86,7 +86,7 @@ const HerbCardMobile = ({ showCard, setShowCard })=> {
                                 <img src={herb.img} alt="herb"/>
 
                                 <div className="close" onClick={closeCard}>
-                                    <i class="fas fa-times"></i>
+                                    <i className ="fas fa-times"></i>
                                 </div>
 
                                 <div className="card-header">
@@ -97,7 +97,7 @@ const HerbCardMobile = ({ showCard, setShowCard })=> {
                             <div className="info">
                                 <div className="info-rows">
                                     { information.map((info, index) =>( 
-                                        <div className="info-row" onClick={(e)=>onClick(e, index)}>
+                                        <div className="info-row" key={index} onClick={(e)=>onClick(e, index)}>
                                             <h4 className={setTitleClassName(index)}>{info.title}</h4>
                                             <div className={setPanelClassName(index)}>
                                                 <p>{info.content}</p>
