@@ -20,7 +20,6 @@ const HerbCardMobile = ({ showCard, setShowCard })=> {
         if(herb !== null && herb !== undefined){
             setContent(herb)
             setShowCard(true)
-            console.log(content)
         }
     }, [herb, setContent, content, setShowCard])
 
@@ -38,16 +37,16 @@ const HerbCardMobile = ({ showCard, setShowCard })=> {
           content: herb.origin,
         },
         {
-        title: "Substitutions",
-        content: herb.other,
+            title: "Cusines",
+            content: herb.cuisines,
         },
         {
-            title: "Cusines",
-            content: herb.cusisine,
+            title: "Other Names",
+            content: herb.other,
         },
         {
             title: "Substitutions",
-            content:herb.substitutions,
+            content:herb.substitutes,
         },
     ]
 
