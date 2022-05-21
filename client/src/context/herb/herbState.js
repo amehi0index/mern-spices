@@ -29,6 +29,7 @@ const HerbState = (props) => {
         error: null,
     }
 
+    //call reducer actions
     const [state, dispatch] = useReducer(herbReducer, initialState)
    
     //GET herbs
