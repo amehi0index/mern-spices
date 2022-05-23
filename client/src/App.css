@@ -1,0 +1,1177 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*Preloader*/
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #051d38;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  opacity: 1;
+  transition: opacity 5s ease;
+}
+
+.loader-container.finish {
+  opacity: 0;
+  pointer-events: none;
+  /*display: none;*/
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #ff4500;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  transition: opacity 2s ease;
+}
+
+body {
+  display: flex;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  background-image: url('img/herb-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  /*margin: auto;*/
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* HEADER */
+.header {
+  width: 100vw;
+  height: 23vh;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: 800;
+  margin-bottom: 4em;
+  background-image: url('img/header-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home-header {
+  width: 100vw;
+  height: 25%;
+  padding: 50px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: 800;
+  margin-bottom: 0.8em;
+}
+
+.header .brand,
+.home-header .brand {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header .before,
+.home-header .before {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 2.75em;
+  color: orangered;
+  line-height: 1;
+  letter-spacing: 2px;
+}
+
+.header h2,
+.home-header h2 {
+  font-size: 2.25em;
+  color: #fff;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+.header .after,
+.home-header .after {
+  font-size: 2em;
+  font-weight: 600;
+  letter-spacing: 1.1em;
+  line-height: 1;
+  color: orangered;
+  text-transform: uppercase;
+}
+
+/* CONTENT */
+.content {
+  position: relative;
+  display: flex;
+  padding-left: 5.5%;
+  flex-direction: column;
+  width: 50%;
+  height: 60%;
+  transition: height 1s ease;
+}
+
+.content.adjust-height {
+  height: 10%;
+}
+
+.content .welcome {
+  width: 100%;
+  transition: all 2s ease;
+}
+
+.content .welcome.hide-welcome {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.content h2 {
+  font-size: 6em;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+.content p {
+  font-size: 1.25em;
+  color: #fff;
+  margin: 15px 0 25px 0;
+  font-weight: 400;
+  max-width: 500px;
+}
+
+/* BUTTONS */
+.expand-search-btn {
+  display: flex;
+  outline: none;
+  border: none;
+  background: #ff4500;
+  font-size: 1em;
+  padding: 16px 34px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.02s ease;
+}
+
+.expand-search-btn.hide {
+  background: transparent;
+}
+
+.food-info-btn {
+  position: absolute;
+  right: 50px;
+  bottom: 30px;
+  background: #ff4500;
+  font-size: 1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 2px;
+  padding: 15px 35px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+/* SEARCH INPUT */
+.search {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(0%);
+  transition: 2s ease;
+}
+
+.search.hidden {
+  transform: translateY(85%);
+  z-index: -10;
+  opacity: 0;
+}
+
+.search .show-input {
+  display: flex;
+  align-items: center;
+  width: 72.1%;
+  min-width: 551px;
+}
+
+.input-results {
+  display: grid;
+  width: 100%;
+  grid-template-areas:
+    'home-btn form form form form'
+    'space-1 list-container list-container list-container';
+}
+
+/*Input Rows*/
+.input-span {
+  min-height: 49px;
+  max-height: 49px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in 2s;
+}
+
+.input-span.show {
+  width: 100%;
+}
+
+.input-span.hide {
+  transform: translateX(100%);
+}
+
+.home-btn {
+  grid-area: home-btn;
+  width: 26.87%;
+  min-width: 26.87%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: none;
+  background: #ff4500;
+  font-size: 1em;
+  padding: 15px 38px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 2px;
+  transition: all 0.02s ease 3s;
+  cursor: pointer;
+}
+
+.home-btn-mobile {
+  display: none;
+  grid-area: home-btn-mobile;
+  width: 15%;
+  min-width: 15%;
+  outline: none;
+  border: none;
+  background: #ff4500;
+  font-size: 1.1em;
+  padding: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 2px;
+  transition: all 0.02s ease 3s;
+  cursor: pointer;
+}
+
+.home-btn.hide {
+  background: transparent;
+}
+
+.home-btn:hover .back-arrow.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-30px);
+}
+
+.back-arrow {
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  max-width: 0;
+  transition: all 0.3s ease;
+}
+
+.input-span form {
+  grid-area: form;
+  display: flex;
+  width: 78.13%;
+  height: 100%;
+}
+
+.input-span form input[type='text'] {
+  padding: 15px;
+  outline: none;
+  border: none;
+  width: 90%;
+  height: 100%;
+  opacity: 0;
+  font-size: 1em;
+  transition: all 0.5s ease-in 2s;
+}
+
+.input-span form input[type='text'].slide {
+  opacity: 1;
+}
+
+.search-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10%;
+  max-height: 100%;
+  border: none;
+  outline: none;
+  background: #ff4500;
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #fff;
+
+  opacity: 0;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease 2.5s;
+}
+
+.search-icon-btn.show-icon {
+  opacity: 1;
+}
+
+.search-icon-btn i:hover {
+  transform: scale(1.1);
+}
+
+/*Herb List Row*/
+.herb-list-span {
+  width: 100%;
+  display: flex;
+}
+
+.herb-list-span .space-1 {
+  grid-area: space-1;
+  width: 26.87%;
+}
+
+/* HERBLIST UL */
+.herb-list-container {
+  grid-area: list-container;
+  width: 73.13%;
+}
+
+.herb-list {
+  list-style-type: none;
+  height: auto;
+  width: 90%;
+}
+
+.space-2 {
+  width: 10%;
+}
+
+.herb-list.hide {
+  display: none;
+}
+
+.herb-list li {
+  background: rgba(7, 61, 116, 0.5);
+  padding-left: 20px;
+  color: orangered;
+  color: #f5f5f5;
+  transition: 0.2s ease;
+}
+
+.herb-list li:hover {
+  background: rgba(7, 61, 116, 0.9);
+}
+
+.herb-list li.current {
+  background: rgba(7, 61, 116, 0.9);
+}
+
+.herb-list li:focus {
+  outline: none;
+}
+
+.herb-list li.hide {
+  display: none;
+}
+
+/*ALERTS*/
+.search .alert {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  max-height: 40px;
+  width: 50%;
+  opacity: 0.9;
+  background: #fff;
+  color: #333;
+  margin: 20px 119px;
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.search .alert.show {
+  opacity: 1;
+}
+
+.search .alert .alert-icon {
+  background: orange;
+  color: #fff;
+  padding: 8px 20px;
+  height: 100%;
+}
+
+.search .alert .message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.search .alert {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  max-height: 40px;
+  width: 50%;
+  opacity: 0.9;
+  background: #fff;
+  color: #333;
+  margin: 20px 119px;
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.search .alert.show {
+  opacity: 1;
+}
+
+.search .alert .alert-icon {
+  background: orange;
+  color: white;
+  padding: 8px 20px;
+  height: 100%;
+}
+
+.search .alert .message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/*Link to Form Button*/
+.to-herb-form-btn {
+  position: absolute;
+  bottom: 10%;
+  right: 3%;
+  display: flex;
+  outline: none;
+  border: none;
+  box-shadow: 2px 2px 3px rgba(129, 142, 155, 0.5);
+  font-size: 1.5em;
+  padding: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 2px;
+  border-radius: 50%;
+  background: #ff4500;
+  opacity: 0;
+  transition: opacity 0.5s ease 3s, transform 0.05s ease-in-out;
+}
+
+.to-herb-form-btn.show {
+  opacity: 1;
+}
+
+.to-herb-form-btn.show:hover {
+  transform: scale(1.1);
+}
+
+/*HERB FORM */
+.form-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  height: calc(100% - 20vh);
+  width: 100vw;
+}
+
+.form-container form {
+  display: flex;
+  align-items: center;
+  background: #f0e9e9e6;
+  box-shadow: 1px 1px 5px rgba(129, 142, 155, 0.5);
+  width: 75%;
+  margin: 30px 0;
+  padding: 40px;
+  flex-direction: column;
+  font-size: 1em;
+  border-radius: 3px;
+}
+
+.form-container .herb-form-title {
+  color: #0f4269;
+  padding-bottom: 15px;
+}
+
+.form-container form .herb-form-btn {
+  align-self: center;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  background: #0f4269;
+  font-size: 16px;
+  margin: 15px 0;
+  padding: 20px 40px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  margin: 3px 0;
+  width: 100%;
+}
+
+.form-group input {
+  border: 1px solid #dfdcdc;
+  outline: none;
+  padding: 15px;
+  width: 75%;
+  min-width: 60%;
+  font-size: 1em;
+}
+
+.form-control-file {
+  display: flex;
+  color: rgba(0, 0, 0, 0);
+}
+
+.form-control-file.show {
+  color: rgba(0, 0, 0, 1);
+}
+
+.form-control-file::file-selector-button {
+  padding: 0.4em 0.8em;
+  border-radius: 3px;
+  margin-right: 15px;
+  background: #0f4269;
+  color: #fff;
+  cursor: pointer;
+}
+
+.categories-group {
+  display: flex;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.categories-foods {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.categories-foods div {
+  display: flex;
+  justify-content: space-between;
+  margin: 3px 0;
+}
+
+.categories-foods input {
+  border: 1px solid #dfdcdc;
+  outline: none;
+  padding: 15px;
+  width: 75%;
+  min-width: 60%;
+  font-size: 1em;
+}
+
+.herb-form-float-btns {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 10%;
+  right: 3%;
+}
+
+.herb-list-float-btn,
+.clear-form-float-btn {
+  display: flex;
+  outline: none;
+  border: none;
+  box-shadow: 2px 2px 3px rgba(129, 142, 155, 0.5);
+  font-size: 1.4em;
+  padding: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 2px;
+  border-radius: 50%;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.herb-list-float-btn {
+  background: #0f4269;
+}
+
+.clear-form-float-btn {
+  background: #ff4500;
+}
+
+.herb-list-float-btn:hover,
+.clear-form-float-btn:hover {
+  transform: scale(1.1);
+}
+
+#herb-form-tooltip,
+#add-herb-tooltip,
+#active-icon-tooltip {
+  background: #0f395e !important;
+}
+
+/*HERB CARDS PAGE*/
+.herb-list-cards-container {
+  position: relative;
+  height: auto;
+  width: 100%;
+  /* background: #f5f5f5;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 3%;
+  margin: auto;
+}
+
+.herb-list-back-btn {
+  background: transparent;
+  padding: 10px 20px;
+  border-radius: 6px;
+  color: #0f4269;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.herb-list-back-btn:hover {
+  background: #0f4269;
+  color: #fff;
+  box-shadow: 2px 2px 3px rgba(129, 142, 155, 0.5);
+}
+
+.herb-list-filter {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 0 60px 100px;
+}
+
+.herb-list-input {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f7f5f5;
+  border: 1px solid #dfdcdc;
+  border-radius: 4px;
+  outline: none;
+  padding: 1em;
+  font-size: 1em;
+  width: 50%;
+  align-self: center;
+}
+
+.herb-list-input:focus {
+  background: #fff;
+  box-shadow: 1px 1px 2px rgba(129, 142, 155, 0.3);
+}
+
+.herb-list-icon {
+  position: absolute;
+  right: 25%;
+  color: #134972;
+  font-size: 1.5em;
+  padding: 1.3em;
+  z-index: 100;
+}
+
+.herb-list-cards {
+  width: 95%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+.herb-list-card {
+  width: 100%;
+  padding: 20px;
+  height: 300px;
+  background: #f0e9e9e6;
+  border-radius: 2px;
+  overflow-y: scroll;
+  font-size: 13px;
+}
+
+.herb-list-card-header {
+  color: #125080;
+  display: flex;
+  justify-content: space-between;
+}
+
+.herb-list-card-btns i {
+  color: #134972;
+  font-size: 16px;
+  margin: 4px;
+}
+
+.herb-list-card-btn {
+  outline: none;
+  border: none;
+  background: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.herb-list-card ul {
+  list-style: none;
+}
+
+.herb-list-card .flex-row {
+  display: flex;
+}
+
+.herb-list-card .flex-row h4 {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 3.125em;
+  margin-right: 2.7em;
+}
+.herb-list-card .flex-row p {
+  padding-left: 0.7em;
+}
+
+/* SCROLL BAR */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #134972;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #165483;
+}
+
+/*LOADER*/
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background: #02162a;
+  color: #fff;
+  overflow: hidden;
+}
+
+/*ALERTS*/
+.alert {
+  position: fixed;
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  padding: 0.7rem;
+  margin: 1rem 0;
+  opacity: 0.9;
+  background: var(--light-color);
+  color: #333;
+}
+
+.alert-primary {
+  background: #0f395e;
+  color: #fff;
+}
+
+.alert-orange {
+  background: #ff4500;
+  color: #fff;
+}
+
+.alert-dark {
+  background: #333333;
+  color: #fff;
+}
+
+.alert-danger {
+  background: #dc3545;
+  color: #fff;
+}
+
+.alert-success {
+  background: #28a745;
+  color: #fff;
+}
+
+.alert-white {
+  background: #fff;
+  color: #333;
+  border: #ccc solid 1px;
+}
+
+/*MEDIA QUERIES*/
+@media (max-width: 1100px) {
+  .header,
+  .home-header {
+    margin-bottom: 20px;
+  }
+  .header .brand,
+  .home-header .brand {
+    width: 100%;
+  }
+
+  .header .brand,
+  .home-header .brand {
+    width: 100%;
+  }
+  .header .before,
+  .home-header .before {
+    font-size: 3.5em;
+    letter-spacing: 2px;
+  }
+
+  .header h2,
+  .home-header h2 {
+    font-size: 2.5em;
+    letter-spacing: 3px;
+  }
+
+  .header .after,
+  .home-header .after {
+    font-size: 2.5em;
+    letter-spacing: 12px;
+  }
+
+  .content .welcome {
+    margin-top: 5px;
+  }
+
+  .content h2 {
+    font-size: 7em;
+  }
+
+  .content p {
+    font-size: 1.5em;
+    color: #fff;
+    margin: 15px 0 35px 0;
+  }
+
+  .expand-search-btn,
+  .food-info-btn,
+  .form-container form .herb-form-btn {
+    font-size: 1em;
+    padding: 15px 32px;
+  }
+
+  .to-herb-form-btn,
+  .herb-list-float-btn,
+  .clear-form-float-btn {
+    bottom: 2%;
+    padding: 20px 20px;
+  }
+
+  .form-container form {
+    width: 75%;
+  }
+
+  .herb-list-filter {
+    margin: 0 0 20px 0;
+    padding: 0 20px;
+  }
+
+  .herb-list-cards-container .herb-list-input {
+    width: 75%;
+  }
+
+  .herb-list-cards-container .herb-list-icon {
+    right: 12%;
+  }
+
+  .herb-list-cards-container .herb-list-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/*styles for anything under 768px*/
+@media (max-width: 768px) {
+  .header,
+  .home-header {
+    padding: 20px;
+  }
+
+  .home-header {
+    margin-bottom: 20px;
+    height: 20%;
+  }
+
+  .header .brand,
+  .home-header .brand {
+    width: 100%;
+  }
+
+  .header .before,
+  .home-header .before {
+    font-size: 2.5em;
+  }
+
+  .header h2,
+  .home-header h2 {
+    font-size: 2.5em;
+  }
+
+  .header .after,
+  .home-header .after {
+    font-size: 2em;
+    letter-spacing: 12px;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .content h2 {
+    font-size: 3.325em;
+  }
+
+  .content p {
+    font-size: 1.1em;
+    max-width: 200px;
+  }
+
+  .expand-search-btn,
+  .form-container form .herb-form-btn {
+    font-size: 15px;
+    padding: 12px 24px;
+    letter-spacing: 1px;
+  }
+
+  .food-info-btn {
+    font-size: 13px;
+    padding: 9px 18px;
+    letter-spacing: 1px;
+  }
+
+  .home-btn {
+    display: none;
+  }
+
+  .home-btn-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    padding: 12px 8px;
+    background: transparent;
+  }
+
+  .input-results {
+    width: 85%;
+  }
+  .search .show-input {
+    display: flex;
+    align-items: center;
+    width: 95%;
+    min-width: 95%;
+  }
+
+  .input-span {
+    min-height: 40px;
+    max-height: 40px;
+  }
+
+  .input-span form {
+    font-size: 15px;
+    width: 85%;
+  }
+
+  .herb-list {
+    font-size: 14px;
+  }
+
+  .herb-list-span .space-1 {
+    width: 15%;
+  }
+
+  .herb-list-container {
+    width: 85%;
+  }
+
+  /*ADD HERB FORM*/
+  .herb-form-float-btns {
+    bottom: 2%;
+    right: 5%;
+    margin: 0;
+  }
+
+  .to-herb-form-btn {
+    bottom: 4%;
+    right: 3%;
+    margin: 0;
+  }
+
+  .to-herb-form-btn,
+  .herb-list-float-btn,
+  .clear-form-float-btn {
+    font-size: 12px;
+    padding: 16px 16px;
+    margin: 4px;
+  }
+
+  .form-container form {
+    width: 95%;
+    padding: 20px;
+    margin: 0;
+  }
+
+  .form-container .herb-form-title {
+    font-size: 16px;
+  }
+
+  .form-container .form-group,
+  .categories-group {
+    font-size: 13px;
+  }
+
+  .form-container .form-group label,
+  .categories-group label {
+    width: 20px;
+  }
+
+  .categories-title label {
+    font-weight: bold;
+  }
+
+  .form-container .form-group input {
+    width: 75%;
+    min-width: 70%;
+    min-height: 40px;
+    max-height: 40px;
+  }
+
+  .form-group .form-control-file {
+    min-height: 60px;
+    max-height: 60px;
+    padding-bottom: 40px;
+  }
+
+  .categories-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+  }
+
+  .categories-foods input {
+    width: 75%;
+    min-width: 70%;
+    min-height: 40px;
+    max-height: 40px;
+  }
+
+  .form-container form .herb-form-btn {
+    font-size: 14px;
+    padding: 14px 28px;
+  }
+
+  /*HERB CARDS LIST*/
+  .herb-list-filter {
+    padding: 0 10px;
+  }
+  .herb-list-back-btn {
+    padding: 8px 16px;
+    font-size: 1em;
+  }
+
+  .herb-list-cards-container .herb-list-input {
+    margin-left: 10px;
+    padding: 14px;
+    font-size: 1em;
+  }
+
+  .herb-list-cards-container .herb-list-icon {
+    font-size: 1.2em;
+  }
+
+  .herb-list-cards-container .herb-list-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .herb-list-cards .herb-list-card {
+    padding: 1.25em;
+    height: 200px;
+    font-size: 0.875em;
+  }
+
+  .herb-list-card-header {
+    font-size: 0.875em;
+  }
+
+  .herb-list-card .herb-list-card-btns i {
+    font-size: 1em;
+  }
+
+  .herb-list-card .flex-row h4 {
+    width: 3.125em;
+    margin-right: 2.7em;
+  }
+  .herb-list-card .flex-row p {
+    padding-left: 0.625em;
+  }
+  ::-webkit-scrollbar {
+    width: 1em;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
