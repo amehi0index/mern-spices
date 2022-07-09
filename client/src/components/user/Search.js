@@ -70,7 +70,7 @@ const Search = ({ isSearch, setIsSearch, showCard, setShowCard, setShowResults, 
         let match = herbs.find(h => h.name.toLowerCase() === text.toLowerCase())
 
         if (text ===''){
-            setAlert('Please Enter an Herb or Spice', 'orange') 
+            setAlert('Enter an Herb or Spice Name', 'orange') 
         }else if(!match || match === undefined){
             setAlert('Herb or Spice Name Not Found.', 'primary')
         }else{
