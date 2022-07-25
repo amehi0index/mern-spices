@@ -21,7 +21,6 @@ router.get('/', limiter, async (req, res) => {  //cache('2 minutes')
             app_id: process.env.API_ID_VALUE,
             app_key: process.env.API_KEY_VALUE,
             ...url.parse(req.url, true).query
-
         });
 
         const apiRes = await needle('get', `${API_BASE_URL}?${params}`)
