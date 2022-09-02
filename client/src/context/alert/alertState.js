@@ -9,7 +9,7 @@ import {
 
 /*Alert component, alertContext, alert css styles from Brad Traversy*/
 const AlertState = props => {
-    const initialState = [];
+    const initialState = []
 
     const [state, dispatch] = useReducer(alertReducer, initialState);
    
@@ -34,4 +34,4 @@ const AlertState = props => {
 
 };
 
-export default AlertState;
+export default AlertState
