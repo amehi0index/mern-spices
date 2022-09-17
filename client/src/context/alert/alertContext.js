@@ -1,6 +1,6 @@
-import { createContext } from 'react';
+import { createContext } from 'react'
 
 /*Alert component, alertContext, alert css styles from Brad Traversy*/
-const alertContext = createContext();
+const alertContext = createContext()
 
-export default alertContext;
+export default alertContext
