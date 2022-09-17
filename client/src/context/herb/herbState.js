@@ -15,7 +15,7 @@ import {
     HERB_ERROR,
     GET_HERB,
     GET_RECIPES_QUERY
-    } from '../types';
+    } from '../types'
 
 const HerbState = (props) => {
 
@@ -196,4 +196,4 @@ const HerbState = (props) => {
     )
 }
 
-export default HerbState;
+export default HerbState
