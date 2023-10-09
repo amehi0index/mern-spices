@@ -2,14 +2,16 @@
 
 ![Project Image](spices.png)
 
-> Herb and Spice Finder Application built with the MERN Stack.
+> A comprehensive Herb and Spice Finder Application built with the MERN Stack, allowing users to seamlessly search, match, and manage herbs and spices.
 
 ---
 
 ### Table of Contents
 
 - [Description](#description)
-- [How To Use](#how-to-use)
+- [Features](#features)
+- [Technologies](#technologies)
+- [Setup and Usage](#setup)
 - [API References](#references)
 - [License](#license)
 
@@ -17,9 +19,21 @@
 
 ## Description
 
-This application allows a user to search for an herb or spice by name and to match that particular herb or spice with a complementary food or recipe. The MERN Stack version of this application also contains the functionality to add, update and/or delete an herb or spice from the database. Implements third-party API with rate limiting.
+"Ultimate Herb Finder" is a MERN Stack application that offers:
 
-#### Technologies
+- Search: Find herbs and spices by name.
+- Match: Pair herbs or spices with complementary foods or recipes.
+- Manage: Add, update, or delete herbs and spices in the database.
+- API Integration: Implements third-party API with rate limiting for fetching recipes.
+
+## Features
+
+- Herb Management: Add, update, and delete herbs.
+- Recipe Finder: Match herbs with suitable recipes.
+- User-Friendly UI: Intuitive and responsive design for a seamless user experience.
+- Alerts: Informative alerts for user actions.
+
+## Technologies
 
 - React : v17.0.2
 - Express: v4.17.1
@@ -29,25 +43,25 @@ This application allows a user to search for an herb or spice by name and to mat
 
 ---
 
-## How To Use
+## Setup and Usage
 
-#### Install dependencies for server
+#### 1. Install Server Dependencies:
 
 `npm install`
 
-#### Install dependencies for client
+#### 2. Install Client Dependences:
 
 `npm run client-install`
 
-#### Run the client & server with concurrently
+#### 3. Run Client & Server Concurrently:
 
 `npm run dev`
 
-#### Run the Express server only
+#### 4. Run Express Server Only:
 
 `npm run server`
 
-#### Run the React client only
+#### 5. Run React Client Only:
 
 `npm run client`
 
@@ -56,8 +70,7 @@ This application allows a user to search for an herb or spice by name and to mat
 ---
 
 ## API References
-
-To fetch recipes from the Edamame API, create variables in the root .env file:
+For fetching recipes, the application uses the Edamame API. Ensure you have the necessary environment variables set up in the root .env file.
 
 ```
 API_BASE_URL = https://api.edamam.com/search

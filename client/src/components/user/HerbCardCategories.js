@@ -32,6 +32,8 @@ const HerbCardCategories = ({ categories, showFoodInfo, setShowFoodInfo, herbNam
             }
         ))
 
+        console.log("orig:", categories)
+        console.log("catsObj:", cats)
         setCategoriesArr(cats)
 
     }, [setCategoriesArr, categories])
