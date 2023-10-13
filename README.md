@@ -61,7 +61,8 @@
 
 `npm run server`
 
-#### 5. Run React Client Only:
+#### 5. 
+Run React Client Only:
 
 `npm run client`
 
